@@ -2,18 +2,27 @@
 
 <div class="container">
     <div class="row">
+        <a asp-controller="Appointment" asp-action="Book" class="btn btn-primary">Book An Appointment</a>
+
+
         @foreach (var item in Model)
         {
             <div class="col-md-4 mb-4">
-                <div class="card">
-                    <img src="~/images/@item.Img" class="card-img-top" alt="...">
+                <div class="card m-1">
+                    <div class="ratio ratio-4x3">
+                        <img src="~/images/@item.Img" class="card-img-top object-fit-cover" alt="Image of Dr. @item.Name">
+                    </div>
                     <div class="card-body">
                         <h5 class="card-title">@item.Name</h5>
                         <p class="card-text">@item.Specialization</p>
-                        <a href="#" class="btn btn-primary">Book An Appointment</a>
                     </div>
+                    
+
                 </div>
             </div>
         }
     </div>
+
+   
+
 </div>

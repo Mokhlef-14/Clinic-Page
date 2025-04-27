@@ -2,19 +2,33 @@
     ViewData["Title"] = "Welcome to Our Hospital";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome to Our Hospital</h1>
-    <p>Thank you for choosing our hospital for your healthcare needs.</p>
-    <p>Here, we strive to provide the highest quality medical care to our patients.</p>
-    <p>Learn more about our services and specialties:</p>
-    <ul class="list-group">
-        <li class="list-group-item">Internal Medicine</li>
-        <li class="list-group-item">Pediatrics</li>
-        <li class="list-group-item">Dermatology</li>
-        <li class="list-group-item">Surgery</li>
-        <li class="list-group-item">Cardiology</li>
-    </ul>
-    <p>If you have any questions or need assistance, please don't hesitate to contact us.</p>
+<div class="text-center mt-5 animate__animated animate__fadeIn">
+    <h1 class="display-4 text-success fw-bold mb-4">Welcome to Our Hospital</h1>
+    <p class="lead text-muted">Thank you for choosing our hospital for your healthcare needs.</p>
+    <p class="text-secondary">Here, we strive to provide the highest quality medical care to our patients.</p>
+    <p class="fw-semibold">Learn more about our services and specialties:</p>
 
-    
+    <ul class="list-group list-group-flush mb-4">
+        <li class="list-group-item list-group-item-action hover-shadow">Internal Medicine</li>
+        <li class="list-group-item list-group-item-action hover-shadow">Pediatrics</li>
+        <li class="list-group-item list-group-item-action hover-shadow">Dermatology</li>
+        <li class="list-group-item list-group-item-action hover-shadow">Surgery</li>
+        <li class="list-group-item list-group-item-action hover-shadow">Cardiology</li>
+    </ul>
+
+    <p class="text-primary">If you have any questions or need assistance, please don't hesitate to contact us.</p>
 </div>
+
+<!-- Add Animate.css for animations -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet" />
+
+<!-- Custom hover effect -->
+<style>
+    .hover-shadow:hover {
+        background-color: #e9f7ef;
+        font-weight: bold;
+        transform: scale(1.02);
+        transition: all 0.3s ease-in-out;
+        cursor: pointer;
+    }
+</style>

@@ -1,28 +1,29 @@
 ﻿@model IEnumerable<Doctor>
 
-<div class="container">
+<div class="container mt-5 animate__animated animate__fadeIn">
+    <div class="d-flex justify-content-center mb-4">
+        <a asp-controller="Appointment" asp-action="Book" class="btn btn-success btn-lg shadow-sm animate__animated animate__pulse animate__infinite">
+            Book An Appointment
+        </a>
+    </div>
+
     <div class="row">
-        <a asp-controller="Appointment" asp-action="Book" class="btn btn-primary">Book An Appointment</a>
-
-
         @foreach (var item in Model)
         {
             <div class="col-md-4 mb-4">
-                <div class="card m-1">
+                <div class="card shadow-lg border-0 h-100 animate__animated animate__fadeInUp">
                     <div class="ratio ratio-4x3">
-                        <img src="~/images/@item.Img" class="card-img-top object-fit-cover" alt="Image of Dr. @item.Name">
+                        <img src="~/images/@item.Img" class="card-img-top object-fit-cover rounded-top" alt="Image of Dr. @item.Name">
                     </div>
-                    <div class="card-body">
-                        <h5 class="card-title">@item.Name</h5>
-                        <p class="card-text">@item.Specialization</p>
+                    <div class="card-body bg-light">
+                        <h5 class="card-title text-primary fw-bold">@item.Name</h5>
+                        <p class="card-text text-muted">@item.Specialization</p>
                     </div>
-                    
-
                 </div>
             </div>
         }
     </div>
-
-   
-
 </div>
+
+<!-- Add animate.css for animations -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet" />

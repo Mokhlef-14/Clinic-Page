@@ -46,6 +46,18 @@ namespace Hospital512.Controllers
             _Context.SaveChanges();
             return RedirectToAction("Index");
         }
+
+        [HttpPost]
+        public IActionResult Delete(int id)
+        {
+            var appointment = _Context.Appointments.FirstOrDefault(a => a.Id == id);
+            if (appointment != null)
+            {
+                _Context.Appointments.Remove(appointment);
+                _Context.SaveChanges();
+            }
+            return RedirectToAction("Index");
+        }
     }
 
 

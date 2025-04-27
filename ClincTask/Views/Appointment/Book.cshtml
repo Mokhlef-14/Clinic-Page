@@ -1,36 +1,41 @@
 ﻿@model Appointment
 
 <div class="container mt-5">
-    <h2 class="mb-4">Book an Appointment</h2>
+    <div class="card shadow-lg animate__animated animate__fadeIn">
+        <div class="card-body">
+            <h2 class="mb-4 text-primary text-center">Book an Appointment</h2>
 
-    <form asp-action="Book" method="post">
-        <div class="mb-3">
-            <label asp-for="PatientName" class="form-label">Your Name</label>
-            <input asp-for="PatientName" class="form-control" placeholder="Enter your name" />
-            <span asp-validation-for="PatientName" class="text-danger"></span>
+            <form asp-action="Book" method="post">
+                <div class="mb-3">
+                    <label asp-for="PatientName" class="form-label fw-bold">Your Name</label>
+                    <input asp-for="PatientName" class="form-control" placeholder="Enter your name" />
+                    <span asp-validation-for="PatientName" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="DoctorID" class="form-label fw-bold">Choose Doctor</label>
+                    <select asp-for="DoctorID" class="form-select">
+                        <option value="">-- Select a Doctor --</option>
+                        <option value="1">DR. Gayla</option>
+                        <option value="2">DR. Thomas</option>
+                        <option value="3">DR. Melba</option>
+                        <option value="4">DR. Mallory</option>
+                        <option value="5">DR. Fernande</option>
+                    </select>
+                    <span asp-validation-for="DoctorID" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Date" class="form-label fw-bold">Select Day</label>
+                    <input asp-for="Date" type="date" class="form-control" />
+                    <span asp-validation-for="Date" class="text-danger"></span>
+                </div>
+
+                <button type="submit" class="btn btn-primary w-100 fw-bold">Confirm Appointment</button>
+            </form>
         </div>
-
-        <!-- Dropdown for selecting doctor -->
-        <div class="mb-3">
-            <label asp-for="DoctorID" class="form-label">Choose Doctor</label>
-            <select asp-for="DoctorID" class="form-control">
-                <option value="">-- Select a Doctor --</option>
-                <option value="1">DR. Gayla</option>
-                <option value="2">DR. Thomas</option>
-                <option value="3">DR. Melba</option>
-                <option value="4">DR. Mallory</option>
-                <option value="5">DR. Fernande</option>
-            </select>
-            <span asp-validation-for="DoctorID" class="text-danger"></span>
-        </div>
-
-        <div class="mb-3">
-            <label asp-for="Date" class="form-label">Select Day</label>
-            <input asp-for="Date" type="date" class="form-control" />
-            <span asp-validation-for="Date" class="text-danger"></span>
-        </div>
-
-        <button type="submit" class="btn btn-primary w-100">Confirm Appointment</button>
-    </form>
+    </div>
 </div>
 
+<!-- Add animate.css for animations -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet" />
